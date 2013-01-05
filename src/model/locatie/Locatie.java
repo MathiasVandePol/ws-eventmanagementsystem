@@ -6,10 +6,10 @@ import java.util.List;
 
 public class Locatie {
 	
-	public String plaatsNaam;	//bv de View
-	public String adres;	//bv G202
-	public int capaciteit;
-	public List<Dag> dagen;
+	private String plaatsNaam;	//bv de View
+	private String adres;	//bv G202
+	private int capaciteit;
+	private List<Dag> dagen;
 	
 	public Locatie(String plaatsNaam, String adres, int capaciteit) {
 		this.plaatsNaam = plaatsNaam;
@@ -32,6 +32,10 @@ public class Locatie {
 			}
 		}
 		return true;
+	}
+	
+	public int getCapaciteit() {
+		return capaciteit;
 	}
 
 	@Override

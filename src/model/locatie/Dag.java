@@ -3,9 +3,6 @@ package model.locatie;
 import java.util.Calendar;
 import java.util.List;
 
-import model.lessenrooster.Les;
-
-
 public class Dag{
 	
 	private final static int slotDuur = 15; //in minuten

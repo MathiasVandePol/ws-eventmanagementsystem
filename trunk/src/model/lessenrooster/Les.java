@@ -1,13 +1,14 @@
 package model.lessenrooster;
 
-import java.util.Date;
+
+import java.util.Calendar;
 
 import model.abstracten.TijdsInterval;
 
 public class Les extends TijdsInterval
 {
 
-	public Les(Date startDatum, Date eindDatum) {
+	public Les(Calendar startDatum, Calendar eindDatum) {
 		super(startDatum, eindDatum);
 	}
 	

@@ -1,7 +1,7 @@
 package model.lessenrooster;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 public class Student {
@@ -13,7 +13,7 @@ public class Student {
 		lesdagen = new ArrayList<Dag>();
 	}
 	
-	public void voegLesDagToe(Date dag){
+	public void voegLesDagToe(Calendar dag){
 		lesdagen.add(new Dag(dag));
 	}
 
@@ -29,10 +29,13 @@ public class Student {
 		return lesdagen;
 	}
 	
-	public boolean isBeschikbaar(Date dag, Date uur){
+	public boolean isBeschikbaar(Calendar begin, Calendar eind){
 		for (Dag ld : lesdagen){
-			if (ld.getDag().compareTo(dag) == 0){
-				return ld.isBeschikbaar(uur);
+			if (ld.getDatum().get(Calendar.DATE) == begin.get(Calendar.DATE)
+					&& ld.getDatum().get(Calendar.MONTH) == begin.get(Calendar.MONTH) 
+						&& ld.getDatum().get(Calendar.YEAR) == begin.get(Calendar.YEAR) )
+			{
+				return ld.isBeschikbaar(begin, eind);
 			}
 		}
 		return true;		

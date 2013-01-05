@@ -1,7 +1,7 @@
 package model.lessenrooster;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 public class StudentenChecker {
@@ -12,10 +12,10 @@ public class StudentenChecker {
 		studenten = new ArrayList<Student>();
 	}
 	
-	public boolean isEenGepastVoorstel(Date dag, Date uur){
+	public boolean isEenGepastVoorstel(Calendar begin, Calendar eind){
 		int aantalBeschikbaar = 0;
 		for (Student student: studenten){
-			if (student.isBeschikbaar(dag, uur)){
+			if (student.isBeschikbaar(begin, eind)){
 				aantalBeschikbaar++;
 			}
 		}

@@ -1,38 +1,40 @@
 package model.lessenrooster;
 
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.List;
 
 
 public class Dag{
 	private List<Les> lessen;
-	private Date dag;
+	private Calendar datum;
 
-	public Dag(Date dag) {
+	public Dag(Calendar dag) {
 		lessen = new ArrayList<Les>();
-		this.dag = dag;
+		this.datum = dag;
 	}
 
 	public List<Les> getLessen() {
 		return lessen;
 	}
 	
-	public void voegLesToe(Date beginUur, Date eindUur){
+	public void voegLesToe(Calendar beginUur, Calendar eindUur){
 		lessen.add(new Les(beginUur, eindUur));
 	}
 	
-	public boolean isBeschikbaar(Date uur){
+	public boolean isBeschikbaar(Calendar begin, Calendar eind){
 		for (Les les : lessen){
-			if (les.getStartDatum().compareTo(uur) * uur.compareTo(les.getEindDatum()) > 0){
+			if (les.inDitInterval(begin)	|| 
+			les.inDitInterval(eind)){ //begin of eind datum zit in de les
 				return false;
 			}
 		}
 		return true;		
 	}
 	
-	public Date getDag() {
-		return dag;
+	public Calendar getDatum() {
+		return datum;
 	}
+
 
 }

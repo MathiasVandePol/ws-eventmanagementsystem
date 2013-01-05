@@ -12,7 +12,7 @@ public class StudentenChecker {
 		studenten = new ArrayList<Student>();
 	}
 	
-	public boolean isEenGepastVoorstel(Calendar begin, Calendar eind){
+	public boolean isEenGepastVoorstel(Calendar begin, Calendar eind){			//We gaan er vanuit dat het afspraken zijn die voor elke student in het systeem zijn
 		int aantalBeschikbaar = 0;
 		for (Student student: studenten){
 			if (student.isBeschikbaar(begin, eind)){

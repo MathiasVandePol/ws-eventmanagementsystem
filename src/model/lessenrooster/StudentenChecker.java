@@ -1,6 +1,7 @@
 package model.lessenrooster;
 
-import java.util.ArrayList;
+import data.*;
+
 import java.util.Calendar;
 import java.util.List;
 
@@ -9,7 +10,7 @@ public class StudentenChecker {
 	private final int PERCENTAGE_BESCHIKBAAR = 75; //Percentage van studenten dat tenminste beschikbaar moet zijn om de voorgestelde datum te accepteren
 	
 	public StudentenChecker() {
-		studenten = new ArrayList<Student>();
+		studenten.addAll(DataGenerator.maakStudenten());
 	}
 	
 	public boolean isEenGepastVoorstel(Calendar begin, Calendar eind){			//We gaan er vanuit dat het afspraken zijn die voor elke student in het systeem zijn

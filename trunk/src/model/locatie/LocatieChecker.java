@@ -1,17 +1,16 @@
 package model.locatie;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import model.lessenrooster.Student;
+import data.DataGenerator;
 
 public class LocatieChecker {
 	
 	private List<Locatie> locaties;
 
 	public LocatieChecker() {
-		locaties = new ArrayList<Locatie>();
+		locaties.addAll(DataGenerator.maakLocaties());
 	}
 	
 	public Locatie geefBeschikbareLocatie(Calendar begin, Calendar eind, int aantalPersonen){

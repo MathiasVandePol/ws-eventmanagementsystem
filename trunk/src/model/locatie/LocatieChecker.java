@@ -1,5 +1,6 @@
 package model.locatie;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -10,6 +11,7 @@ public class LocatieChecker {
 	private List<Locatie> locaties;
 
 	public LocatieChecker() {
+		locaties = new ArrayList<Locatie>();
 		locaties.addAll(DataGenerator.maakLocaties());
 	}
 	

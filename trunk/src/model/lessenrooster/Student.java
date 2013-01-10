@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ * @author Mathias
+ *
+ */
 public class Student {
 	private String studentenNummer;
 	private List<Dag> lesdagen;
@@ -23,6 +27,10 @@ public class Student {
 
 	public void setStudentenNummer(String studentenNummer) {
 		this.studentenNummer = studentenNummer;
+	}
+	
+	public void setLesdagen(List<Dag> lesdagen) {
+		this.lesdagen = lesdagen;
 	}
 
 	public List<Dag> getLesdagen() {

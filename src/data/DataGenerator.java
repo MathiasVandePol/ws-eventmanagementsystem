@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
 
-import model.lessenrooster.*;
+import model.lessenrooster.Dag;
+import model.lessenrooster.Student;
 import model.locatie.Locatie;
 
 public class DataGenerator {

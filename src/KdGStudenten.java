@@ -1,8 +1,10 @@
-package model.lessenrooster;
+
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+
+import model.lessenrooster.Student;
 
 import data.DataGenerator;
 

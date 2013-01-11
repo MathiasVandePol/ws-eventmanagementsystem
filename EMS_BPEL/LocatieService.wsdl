@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://locatie.model/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ns0="http://ws.apache.org/axis2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ws.apache.org/axis2">
+    <wsdl:documentation>LocatieService</wsdl:documentation>
+    <wsdl:types>
+        <xs:schema xmlns:ns="http://ws.apache.org/axis2" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ws.apache.org/axis2">
+            <xs:element name="geefBeschikbareLocatie">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="begin" nillable="true" type="xs:dateTime"/>
+                        <xs:element minOccurs="0" name="eind" nillable="true" type="xs:dateTime"/>
+                        <xs:element minOccurs="0" name="aantalPersonen" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="geefBeschikbareLocatieResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="ns1:Locatie"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="annuleerReservering">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="id" type="xs:int"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+        <xs:schema xmlns:ax21="http://locatie.model/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://locatie.model/xsd">
+            <xs:complexType name="Locatie">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="capaciteit" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dagen" nillable="true" type="xs:anyType"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="annuleerReserveringRequest">
+        <wsdl:part name="parameters" element="ns0:annuleerReservering"/>
+    </wsdl:message>
+    <wsdl:message name="geefBeschikbareLocatieRequest">
+        <wsdl:part name="parameters" element="ns0:geefBeschikbareLocatie"/>
+    </wsdl:message>
+    <wsdl:message name="geefBeschikbareLocatieResponse">
+        <wsdl:part name="parameters" element="ns0:geefBeschikbareLocatieResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="LocatieServicePortType">
+        <wsdl:operation name="annuleerReservering">
+            <wsdl:input message="ns0:annuleerReserveringRequest" wsaw:Action="urn:annuleerReservering"/>
+        </wsdl:operation>
+        <wsdl:operation name="geefBeschikbareLocatie">
+            <wsdl:input message="ns0:geefBeschikbareLocatieRequest" wsaw:Action="urn:geefBeschikbareLocatie"/>
+            <wsdl:output message="ns0:geefBeschikbareLocatieResponse" wsaw:Action="urn:geefBeschikbareLocatieResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="LocatieServiceSOAP11Binding" type="ns0:LocatieServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="annuleerReservering">
+            <soap:operation soapAction="urn:annuleerReservering" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="geefBeschikbareLocatie">
+            <soap:operation soapAction="urn:geefBeschikbareLocatie" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="LocatieServiceSOAP12Binding" type="ns0:LocatieServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="annuleerReservering">
+            <soap12:operation soapAction="urn:annuleerReservering" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="geefBeschikbareLocatie">
+            <soap12:operation soapAction="urn:geefBeschikbareLocatie" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="LocatieServiceHttpBinding" type="ns0:LocatieServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="annuleerReservering">
+            <http:operation location="LocatieService/annuleerReservering"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="annuleerReservering"/>
+            </wsdl:input>
+        </wsdl:operation>
+        <wsdl:operation name="geefBeschikbareLocatie">
+            <http:operation location="LocatieService/geefBeschikbareLocatie"/>
+            <wsdl:input>
+                <mime:content type="text/xml" part="geefBeschikbareLocatie"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="text/xml" part="geefBeschikbareLocatie"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="LocatieService">
+        <wsdl:port name="LocatieServiceSOAP11port_http" binding="ns0:LocatieServiceSOAP11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/LocatieService"/>
+        </wsdl:port>
+        <wsdl:port name="LocatieServiceSOAP12port_http" binding="ns0:LocatieServiceSOAP12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/LocatieService"/>
+        </wsdl:port>
+        <wsdl:port name="LocatieServiceHttpport" binding="ns0:LocatieServiceHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/LocatieService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

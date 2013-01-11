@@ -20,12 +20,12 @@ public abstract class TijdsInterval {
 	}
 	
 	public boolean inDitInterval(Calendar uur){	//kijkt of het meegegeven uur tussen het begin en einduur liggen
-		
+	//	System.out.println("Uur om te kijken:" + uur.getTime());
+	//	System.out.println("Begin interval:" + startDatum.getTime());
+	//	System.out.println("Eind interval:" + eindDatum.getTime());
 
 		if (startDatum.compareTo(uur) * uur.compareTo(eindDatum) > 0){
-		//	System.out.println("Uur om te kijken:" + uur.getTime());
-			//System.out.println("Begin interval:" + startDatum.getTime());
-			//System.out.println("Eind interval:" + eindDatum.getTime());
+		
 			return true;
 		}
 		return false;

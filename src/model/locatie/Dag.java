@@ -1,5 +1,6 @@
 package model.locatie;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -12,17 +13,20 @@ public class Dag{
 	private Calendar datum;
 
 	public Dag(Calendar datum) {
-		this.datum = datum;
+		this.datum = datum; 
+		slots = new ArrayList<Slot>();
 		for (int i = 0; i < aantalUur * 60/slotDuur; i++){
-			Calendar begin = Calendar.getInstance();
-			begin.set(datum.get(Calendar.DATE), datum.get(Calendar.MONTH), datum.get(Calendar.MINUTE), 
-					beginUur, 0, 0);
+			Calendar begin = (Calendar) datum.clone();
+			begin.set(Calendar.HOUR_OF_DAY, beginUur);
+			begin.set(Calendar.MINUTE, 0);
+			begin.set(Calendar.SECOND, 0);
 			begin.add(Calendar.MINUTE, i * slotDuur);
 			Calendar eind = (Calendar) begin.clone();
-			eind.add(Calendar.MINUTE, slotDuur - 1); 
-			Slot slot = new Slot(begin, eind);
+			eind.add(Calendar.MINUTE, slotDuur-1); 
+			Slot slot = new Slot((Calendar)begin.clone(), (Calendar)eind.clone());
 			slots.add(slot);
 		}
+
 	}
 	
 	public boolean isBeschikbaar(Calendar begin, Calendar eind){
@@ -37,7 +41,15 @@ public class Dag{
 		return true;		
 	}
 	
+	public void setSlots(List<Slot> slots) {
+		this.slots = slots;
+	}
+	
 	public Calendar getDatum() {
 		return datum;
+	}
+	
+	public List<Slot> getSlots() {
+		return slots;
 	}
 }

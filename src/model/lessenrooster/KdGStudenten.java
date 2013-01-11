@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-public class StudentenChecker {
+public class KdGStudenten {
 	private List<Student> studenten;
 	private final int PERCENTAGE_BESCHIKBAAR = 75; //Percentage van studenten dat tenminste beschikbaar moet zijn om de voorgestelde datum te accepteren
 	
-	public StudentenChecker() {
+	public KdGStudenten() {
 		studenten = new ArrayList<Student>();
 		studenten.addAll(DataGenerator.maakStudenten());
 	}
@@ -27,6 +27,16 @@ public class StudentenChecker {
 			return true;
 		}
 		return false;
+	}
+	
+	public void planLes(int id){
+		//plan les
+		
+	}
+		
+	public void annuleerLes(int id){
+		//annuleer les
+		
 	}
 	
 	

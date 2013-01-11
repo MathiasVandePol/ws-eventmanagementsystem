@@ -47,6 +47,10 @@ public class Locatie {
 		return sb.toString();
 	}
 	
+	public void setDagen(List<Dag> dagen) {
+		this.dagen = dagen;
+	}
+	
 	
 	
 	

@@ -5,7 +5,7 @@ import java.util.Calendar;
 import model.abstracten.TijdsInterval;
 
 public class Slot extends TijdsInterval {
-	private boolean bezet;
+	private boolean bezet = false;
 	
 	public Slot(Calendar beginuur, Calendar einduur) {
 		super(beginuur, einduur);

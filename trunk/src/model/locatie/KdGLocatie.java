@@ -6,11 +6,11 @@ import java.util.List;
 
 import data.DataGenerator;
 
-public class LocatieChecker {
+public class KdGLocatie {
 	
 	private List<Locatie> locaties;
 
-	public LocatieChecker() {
+	public KdGLocatie() {
 		locaties = new ArrayList<Locatie>();
 		locaties.addAll(DataGenerator.maakLocaties());
 	}
@@ -22,6 +22,10 @@ public class LocatieChecker {
 			}
 		}
 		return null;
+	}
+	
+	public void annuleerReservering(int id){
+		
 	}
 
 }

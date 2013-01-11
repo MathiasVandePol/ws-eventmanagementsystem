@@ -1,18 +1,18 @@
 import java.util.Calendar;
 
-import model.lessenrooster.StudentenChecker;
-import model.locatie.LocatieChecker;
+import model.lessenrooster.KdGStudenten;
+import model.locatie.KdGLocatie;
 
 public class Run {
 
 	static Calendar begin;
 	static Calendar eind;
-	static StudentenChecker sc;
-	static LocatieChecker lc;
+	static KdGStudenten sc;
+	static KdGLocatie lc;
 
 	public static void main(String[] args) {
-		sc = new StudentenChecker();
-		lc = new LocatieChecker();
+		sc = new KdGStudenten();
+		lc = new KdGLocatie();
 		begin = Calendar.getInstance();
 		eind = (Calendar) begin.clone();
 		eind.add(Calendar.HOUR, 2);

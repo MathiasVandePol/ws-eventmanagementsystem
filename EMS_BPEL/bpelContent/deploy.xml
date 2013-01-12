@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy xmlns="http://www.apache.org/ode/schemas/dd/2007/03" xmlns:lessenrooster.model="http://lessenrooster.model" xmlns:locatie.model="http://locatie.model" xmlns:sample="http://sample.bpel.org/bpel/sample">
+  <process name="sample:CreateEvent">
+    <active>true</active>
+    <retired>false</retired>
+    <process-events generate="all"/>
+    <provide partnerLink="client">
+      <service name="sample:CreateEventService" port="CreateEventPort"/>
+    </provide>
+    <invoke partnerLink="KdGLocatie">
+      <service name="locatie.model:LocatieService" port="LocatieServiceSOAP11port_http"/>
+    </invoke>
+    <invoke partnerLink="KdGStudent">
+      <service name="lessenrooster.model:StudentenService" port="StudentenServiceSOAP11port_http"/>
+    </invoke>
+  </process>
+</deploy>

@@ -3,7 +3,7 @@
   <process name="sample:CreateEvent">
     <active>true</active>
     <retired>false</retired>
-    <process-events generate="all"/>
+    <process-events generate="none"/>
     <provide partnerLink="client">
       <service name="sample:CreateEventService" port="CreateEventPort"/>
     </provide>

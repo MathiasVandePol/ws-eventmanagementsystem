@@ -39,12 +39,17 @@
           Reference to the message that will be returned to the requester
           -->
         <bpel:variable name="output" messageType="tns:CreateEventResponseMessage"/>        
+        
+        
+        
+        
+        
+        
         <bpel:variable name="KdGStudentResponse" messageType="ns1:isEenGepastVoorstelResponse"></bpel:variable>
         <bpel:variable name="KdGStudentRequest" messageType="ns1:isEenGepastVoorstelRequest"></bpel:variable>
         <bpel:variable name="KdGLocatieResponse" messageType="ns0:geefBeschikbareLocatieResponse"></bpel:variable>
         <bpel:variable name="KdGLocatieRequest" messageType="ns0:geefBeschikbareLocatieRequest"></bpel:variable>
         <bpel:variable name="KdGStudentRequest1" messageType="ns1:planLesRequest"></bpel:variable>
-        <bpel:variable name="clientResponse" messageType="tns:CreateEventResponseMessage"></bpel:variable>
     </bpel:variables>
 
     <!-- ================================================================= -->         
@@ -69,21 +74,22 @@
             
             
             
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             <bpel:copy>
-                <bpel:from><bpel:literal><tns:CreateEventResponse xmlns:tns="http://sample.bpel.org/bpel/sample" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <tns:result>tns:result</tns:result>
-</tns:CreateEventResponse>
+                <bpel:from><bpel:literal xml:space="preserve"><ns:planLes xmlns:ns="http://lessenrooster.model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ns:id>1</ns:id>
+</ns:planLes>
 </bpel:literal></bpel:from>
-                <bpel:to variable="clientResponse" part="payload"></bpel:to>
-            </bpel:copy>
-            <bpel:copy>
-                <bpel:from><bpel:literal><ns:geefBeschikbareLocatie xmlns:ns="http://locatie.model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <ns:begin>2001-12-31T12:00:00</ns:begin>
-  <ns:eind>2001-12-31T12:00:00</ns:eind>
-  <ns:aantalPersonen>0</ns:aantalPersonen>
-</ns:geefBeschikbareLocatie>
-</bpel:literal></bpel:from>
-                <bpel:to variable="KdGLocatieRequest" part="parameters"></bpel:to>
+                <bpel:to variable="KdGStudentRequest1" part="parameters"></bpel:to>
             </bpel:copy>
             <bpel:copy>
                 <bpel:from><bpel:literal><ns:isEenGepastVoorstel xmlns:ns="http://lessenrooster.model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -93,21 +99,14 @@
 </bpel:literal></bpel:from>
                 <bpel:to variable="KdGStudentRequest" part="parameters"></bpel:to>
             </bpel:copy>
-            <bpel:copy> 
-                <bpel:from part="payload" variable="input">
-                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:begin]]></bpel:query>
-                </bpel:from>
-                <bpel:to part="parameters" variable="KdGStudentRequest">
-                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns1:begin]]></bpel:query>
-                </bpel:to>
-            </bpel:copy>
             <bpel:copy>
-                <bpel:from part="payload" variable="input">
-                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:eind]]></bpel:query>
-                </bpel:from>
-                <bpel:to part="parameters" variable="KdGStudentRequest">
-                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns1:eind]]></bpel:query>
-                </bpel:to>
+                <bpel:from><bpel:literal><ns:geefBeschikbareLocatie xmlns:ns="http://locatie.model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ns:begin>2001-12-31T12:00:00</ns:begin>
+  <ns:eind>2001-12-31T12:00:00</ns:eind>
+  <ns:aantalPersonen>0</ns:aantalPersonen>
+</ns:geefBeschikbareLocatie>
+</bpel:literal></bpel:from>
+                <bpel:to variable="KdGLocatieRequest" part="parameters"></bpel:to>
             </bpel:copy>
             <bpel:copy>
                 <bpel:from part="payload" variable="input">
@@ -126,25 +125,33 @@
                 </bpel:to>
             </bpel:copy>
             <bpel:copy>
-                <bpel:from part="parameters" variable="KdGLocatieResponse">
-                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
-                        <![CDATA[ns0:return]]>
-                    </bpel:query>
+                <bpel:from part="payload" variable="input">
+                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:aantal]]></bpel:query>
                 </bpel:from>
-                <bpel:to part="payload" variable="clientResponse">
-                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
-                        <![CDATA[tns:result]]>
-                    </bpel:query>
+                <bpel:to part="parameters" variable="KdGLocatieRequest">
+                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns0:aantalPersonen]]></bpel:query>
                 </bpel:to>
             </bpel:copy>
             <bpel:copy>
-                <bpel:from>
-                    <bpel:literal xml:space="preserve">1</bpel:literal>
+                <bpel:from part="payload" variable="input">
+                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:begin]]></bpel:query>
                 </bpel:from>
-                <bpel:to part="parameters" variable="KdGStudentRequest1">
-                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns1:id]]></bpel:query>
+                <bpel:to part="parameters" variable="KdGStudentRequest">
+                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns1:begin]]></bpel:query>
                 </bpel:to>
             </bpel:copy>
+            <bpel:copy>
+                <bpel:from part="payload" variable="input">
+                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0">
+                        <![CDATA[tns:eind]]>
+                    </bpel:query>
+                </bpel:from>
+                <bpel:to part="parameters" variable="KdGStudentRequest">
+                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns1:eind]]></bpel:query>
+                </bpel:to>
+            </bpel:copy>
+            
+            
         </bpel:assign>
         
         <!-- Generate reply to synchronous request -->
@@ -155,7 +162,7 @@
             
             <bpel:invoke name="vindLokaal" partnerLink="KdGLocatie" operation="geefBeschikbareLocatie" portType="ns0:LocatieServicePortType" inputVariable="KdGLocatieRequest" outputVariable="KdGLocatieResponse"></bpel:invoke>
             <bpel:invoke name="planEvent" partnerLink="KdGStudent" operation="planLes" portType="ns1:StudentenServicePortType" inputVariable="KdGStudentRequest1"></bpel:invoke>
-            <bpel:reply name="replyOutput" partnerLink="client" portType="tns:CreateEvent" operation="process" variable="clientResponse" />
+            <bpel:reply name="replyOutput" partnerLink="client" portType="tns:CreateEvent" operation="process" variable="output"/>
         </bpel:sequence>
         
         

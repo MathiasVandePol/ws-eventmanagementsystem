@@ -15,10 +15,10 @@ public class KdGLocatie {
 		locaties.addAll(DataGenerator.maakLocaties());
 	}
 	
-	public Locatie geefBeschikbareLocatie(Calendar begin, Calendar eind, int aantalPersonen){
+	public String geefBeschikbareLocatie(Calendar begin, Calendar eind, int aantalPersonen){
 		for (Locatie l : locaties){
 			if (l.getCapaciteit() >= aantalPersonen && l.isBeschikbaar(begin, eind)){
-				return l;
+				return l.toString();
 			}
 		}
 		return null;

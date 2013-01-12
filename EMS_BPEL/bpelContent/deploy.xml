@@ -14,4 +14,19 @@
       <service name="lessenrooster.model:StudentenService" port="StudentenServiceSOAP11port_http"/>
     </invoke>
   </process>
+  <process name="sample:CancelEvent">
+    <process-events generate="none"/>
+    <provide partnerLink="client">
+      <service name="sample:CancelEventService" port="CancelEventPort"/>
+    </provide>
+    <invoke partnerLink="client">
+      <service name="sample:CancelEventService" port="CancelEventPort"/>
+    </invoke>
+    <invoke partnerLink="KdGStudent">
+      <service name="lessenrooster.model:StudentenService" port="StudentenServiceSOAP11port_http"/>
+    </invoke>
+    <invoke partnerLink="KdGLocatie">
+      <service name="locatie.model:LocatieService" port="LocatieServiceSOAP11port_http"/>
+    </invoke>
+  </process>
 </deploy>

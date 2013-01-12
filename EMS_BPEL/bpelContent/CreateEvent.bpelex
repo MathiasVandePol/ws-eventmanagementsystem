@@ -18,7 +18,7 @@
   </extensions>
   <extensions>
     <extendedObject href="CreateEvent.bpel#/"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1358012783656"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1358015967559"/>
   </extensions>
   <extensions>
     <extendedObject href="CreateEvent.bpel#//@activity/@activities.1"/>
@@ -26,6 +26,10 @@
   </extensions>
   <extensions>
     <extendedObject href="CreateEvent.bpel#//@activity/@activities.2"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.2"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
   </extensions>
   <extensions>
@@ -45,11 +49,11 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+    <extendedObject href="CreateEvent.bpel#//@variables/@children.6"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.0"/>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.3"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
@@ -57,43 +61,35 @@
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.0"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.1"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.2"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ActivityExtension"/>
-  </extensions>
-  <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.0/@copy.2"/>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.4"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.0/@copy.1"/>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.5"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.0/@copy.3"/>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.1"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.0/@copy.4"/>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.6"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.0/@copy.5"/>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.7"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
   <extensions>
-    <extendedObject href="CreateEvent.bpel#//@activity/@activities.3/@activities.0/@copy.0"/>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.8"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="CreateEvent.bpel#//@variables/@children.7"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:VariableExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.0"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
 </extensionmodel:ExtensionMap>

@@ -17,6 +17,7 @@ public class Run {
 		eind = (Calendar) begin.clone();
 		eind.add(Calendar.HOUR, 2);
 		for (int i = 0; i < 10; i++) {
+			testStudenten();
 			testLocaties();
 		}
 	}

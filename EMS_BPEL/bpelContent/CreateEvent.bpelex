@@ -14,7 +14,7 @@
   </extensions>
   <extensions>
     <extendedObject href="CreateEvent.bpel#/"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1358016091200"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1358016435914"/>
   </extensions>
   <extensions>
     <extendedObject href="CreateEvent.bpel#//@activity/@activities.1"/>
@@ -86,6 +86,10 @@
   </extensions>
   <extensions>
     <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.0"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
+  </extensions>
+  <extensions>
+    <extendedObject href="CreateEvent.bpel#//@activity/@activities.1/@copy.9"/>
     <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:CopyExtension"/>
   </extensions>
 </extensionmodel:ExtensionMap>

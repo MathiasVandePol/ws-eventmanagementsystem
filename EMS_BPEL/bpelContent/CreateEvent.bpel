@@ -145,6 +145,16 @@
                     <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[ns1:id]]></bpel:query>
                 </bpel:to>
             </bpel:copy>
+            
+            
+            <bpel:copy>
+                <bpel:from>
+                    <bpel:literal xml:space="preserve">Done</bpel:literal>
+                </bpel:from>
+                <bpel:to part="payload" variable="output">
+                    <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:result]]></bpel:query>
+                </bpel:to>
+            </bpel:copy>
         </bpel:assign>
         
         <!-- Generate reply to synchronous request -->

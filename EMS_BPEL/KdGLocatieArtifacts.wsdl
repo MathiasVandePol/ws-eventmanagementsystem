@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definitions xmlns:tns="http://ws.apache.org/axis2" targetNamespace="http://ws.apache.org/axis2Artifacts" xmlns="http://schemas.xmlsoap.org/wsdl/">
-  <partnerLinkType name="LocatieServicePortTypePLT" xmlns="http://docs.oasis-open.org/wsbpel/2.0/plnktype">
-    <role name="LocatieServicePortTypeRole" portType="tns:LocatieServicePortType"/>
-  </partnerLinkType>
-  <import location="LocatieService.wsdl" namespace="http://ws.apache.org/axis2"/>
-</definitions>

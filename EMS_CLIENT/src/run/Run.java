@@ -15,8 +15,8 @@ public class Run {
 		
 	
 	public static void main(String[] args) {
-		begin.set(2013, 0, 13, 12, 0);
-		eind.set(2013, 0, 13, 16, 0);
+		begin.set(2013, 0, 15, 14, 0);
+		eind.set(2013, 0, 15, 16, 0);
 		System.out.println(begin.getTime());
 		System.out.println(eind.getTime());
 

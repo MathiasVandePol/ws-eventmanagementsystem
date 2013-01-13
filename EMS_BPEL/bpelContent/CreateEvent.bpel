@@ -181,8 +181,22 @@
                         </bpel:to>
                     </bpel:copy>
                 </bpel:assign>
-                <bpel:reply name="replyOutput" partnerLink="client" portType="tns:CreateEvent" operation="process" variable="output" />
-        </bpel:sequence>
+                
+                
+                
+            </bpel:sequence>
+            <bpel:else>
+                <bpel:assign validate="no" name="Assign2">
+                    <bpel:copy>
+                        <bpel:from>
+                            <bpel:literal xml:space="preserve">Te Weinig Studenten beschikbaar</bpel:literal>
+                        </bpel:from>
+                        <bpel:to part="payload" variable="output">
+                            <bpel:query queryLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"><![CDATA[tns:result]]></bpel:query>
+                        </bpel:to>
+                    </bpel:copy>
+                </bpel:assign>
+            </bpel:else>
         </bpel:if>
         
         
@@ -198,6 +212,7 @@
          
         
         
+        <bpel:reply name="replyOutput" partnerLink="client" portType="tns:CreateEvent" operation="process" variable="output" />
     </bpel:sequence>
 </bpel:process>
 

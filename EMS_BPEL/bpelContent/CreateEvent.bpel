@@ -158,12 +158,16 @@
         
         
         <bpel:invoke name="isEenGepastVoorstel" partnerLink="KdGStudent" operation="isEenGepastVoorstel" portType="ns1:StudentenServicePortType" inputVariable="KdGStudentRequest" outputVariable="KdGStudentResponse"></bpel:invoke>
-        <bpel:sequence name="Sequence">
+        <bpel:if name="If">
+            <bpel:condition><![CDATA[$KdGStudentResponse.parameters["return"] = "true"]]></bpel:condition>
+            <bpel:sequence name="Sequence">
             
             <bpel:invoke name="vindLokaal" partnerLink="KdGLocatie" operation="geefBeschikbareLocatie" portType="ns0:LocatieServicePortType" inputVariable="KdGLocatieRequest" outputVariable="KdGLocatieResponse"></bpel:invoke>
             <bpel:invoke name="planEvent" partnerLink="KdGStudent" operation="planLes" portType="ns1:StudentenServicePortType" inputVariable="KdGStudentRequest1"></bpel:invoke>
-            <bpel:reply name="replyOutput" partnerLink="client" portType="tns:CreateEvent" operation="process" variable="output"/>
+            <bpel:reply name="replyOutput" partnerLink="client" portType="tns:CreateEvent" operation="process" variable="output" />
         </bpel:sequence>
+        </bpel:if>
+        
         
         
         

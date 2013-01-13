@@ -6,7 +6,7 @@
   </extensions>
   <extensions>
     <extendedObject href="CreateEvent.bpel#/"/>
-    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1358083203671"/>
+    <extensionObject xsi:type="org.eclipse.bpel.ui.uiextensionmodel:ProcessExtension" modificationStamp="1358085172626"/>
   </extensions>
   <extensions>
     <extendedObject href="CreateEvent.bpel#//@variables/@children.1"/>

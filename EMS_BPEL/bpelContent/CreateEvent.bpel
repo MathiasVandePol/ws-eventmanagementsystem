@@ -11,7 +11,7 @@
     <bpel:import namespace="http://sample.bpel.org/bpel/sample" location="CreateEventArtifacts.wsdl" importType="http://schemas.xmlsoap.org/wsdl/"></bpel:import>
     <bpel:import location="CreateEventArtifacts.wsdl" namespace="http://sample.bpel.org/bpel/sample" 
 	        importType="http://schemas.xmlsoap.org/wsdl/" />
-         
+          
     <!-- ================================================================= -->         
     <!-- PARTNERLINKS                                                      -->
     <!-- List of services participating in this BPEL process               -->
@@ -50,6 +50,7 @@
         <bpel:variable name="KdGLocatieResponse" messageType="ns0:geefBeschikbareLocatieResponse"></bpel:variable>
         <bpel:variable name="KdGLocatieRequest" messageType="ns0:geefBeschikbareLocatieRequest"></bpel:variable>
         <bpel:variable name="KdGStudentRequest1" messageType="ns1:planLesRequest"></bpel:variable>
+        
     </bpel:variables>
 
     <!-- ================================================================= -->         
@@ -212,7 +213,8 @@
          
         
         
-        <bpel:reply name="replyOutput" partnerLink="client" portType="tns:CreateEvent" operation="process" variable="output" />
+        
+        <bpel:reply name="replyOutput" partnerLink="client" portType="tns:CreateEvent" operation="process" variable="output"/>
     </bpel:sequence>
 </bpel:process>
 

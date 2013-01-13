@@ -31,10 +31,10 @@ public class Run {
 			
 		} catch (AxisFault e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		} catch (RemoteException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
